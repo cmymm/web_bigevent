@@ -50,13 +50,14 @@ $(function(){
          if(status!=0){
            return layer.msg('登录失败')
          }
+         else{
          layer.msg('登录成功！')
          //存储token到localStorage
         localStorage.setItem('token',res.token)
          //跳转到后台主页
         location.href='/index.html'
        }
-
+      }
      })
     })
   })
