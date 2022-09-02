@@ -27,10 +27,10 @@ $(function(){
     //监听注册表单的提交事件
     $('#form_reg').on('submit',function(e){
       e.preventDefault()
-      $.post('http://api-breakingnews-web.itheima.net/api/reguser',
+      $.post('http://www.liulongbin.top:3007/api/reguser',
       {username:$('#form_reg [name=username]').val(),password:$('#form_reg [name=password]').val()},
       function(res){
-        if(res.status!=0){
+        if(res.status!==0){
           return layer.msg(res.message)
 
         }
@@ -43,20 +43,19 @@ $(function(){
     $('#form_login').on('submit',function(e){
       e.preventDefault()
      $.ajax({
-       url:'http://api-breakingnews-web.itheima.net/api/login',
+       url:'http://www.liulongbin.top:3007/api/login',
        method:'POST',
        data:$(this).serialize(),
        success:function(res){
-         if(status!=0){
+         if(res.status!==0){
            return layer.msg('登录失败')
          }
-         else{
          layer.msg('登录成功！')
          //存储token到localStorage
         localStorage.setItem('token',res.token)
          //跳转到后台主页
         location.href='/index.html'
-       }
+      
       }
      })
     })
