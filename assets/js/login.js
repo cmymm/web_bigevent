@@ -27,7 +27,7 @@ $(function(){
     //监听注册表单的提交事件
     $('#form_reg').on('submit',function(e){
       e.preventDefault()
-      $.post('http://www.liulongbin.top:3007/api/reguser',
+      $.post('http://api-breakingnews-web.itheima.net/api/reguser',
       {username:$('#form_reg [name=username]').val(),password:$('#form_reg [name=password]').val()},
       function(res){
         if(res.status!==0){
@@ -43,7 +43,7 @@ $(function(){
     $('#form_login').on('submit',function(e){
       e.preventDefault()
      $.ajax({
-       url:'http://www.liulongbin.top:3007/api/login',
+       url:'http://api-breakingnews-web.itheima.net/api/login',
        method:'POST',
        data:$(this).serialize(),
        success:function(res){

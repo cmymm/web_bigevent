@@ -18,7 +18,7 @@ $('#btnLogout').on('click',function(){
 function getUserInfo(){
     $.ajax({
         method:'GET',
-        url:'http://www.liulongbin.top:3007/my/userinfo',
+        url:'http://api-breakingnews-web.itheima.net/my/userinfo',
         //headers请求头配置对象
         headers:{
             Authorization:localStorage.getItem('token')||''

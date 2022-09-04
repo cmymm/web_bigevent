@@ -19,7 +19,7 @@ function initUserInfo(){
         headers:{
             Authorization:localStorage.getItem('token')||''
         },
-        url: 'http://www.liulongbin.top:3007/my/userinfo',
+        url: 'http://api-breakingnews-web.itheima.net/my/userinfo',
         success: function (res) {
             if(res.status!==0){
                 return layui.layer.msg('获取用户信息失败')
@@ -47,7 +47,7 @@ $('.layui-form').on('submit',function(e){
         headers:{
             Authorization:localStorage.getItem('token')||''
         },
-        url: 'http://www.liulongbin.top:3007/my/userinfo',
+        url: 'http://api-breakingnews-web.itheima.net/my/userinfo',
         data:$(this).serialize(),
         success:function(res){
             if(res.status!==0){
